@@ -1,0 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var address_1 = require("./domain/entity/address");
+var customer_1 = require("./domain/entity/customer");
+var odrder_1 = require("./domain/entity/odrder");
+var order_item_1 = require("./domain/entity/order_item");
+var customer = new customer_1.default("123", "Thiago Silva");
+var address = new address_1.default("Rua 1", 123, "Bairro 1", "12345678");
+customer.Address = address;
+customer.activate();
+var item1 = new order_item_1.default("123", "item 1", 10, "p1", 2);
+var item2 = new order_item_1.default("123", "item 2", 20, "p2", 2);
+var order = new odrder_1.default("123", "123", [item1, item2]);
+console.log(order);
